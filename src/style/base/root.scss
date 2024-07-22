@@ -1,0 +1,51 @@
+@use "sass:math"; // 导入math模块
+
+//引入阿里妈妈东方正楷字体
+@font-face {
+  font-family: "al-df";
+  src: url("../../../public/font/AlimamaDongFangDaKai-Regular.ttf");
+}
+
+@font-face {
+  font-family: "yu-w03";
+  src: url("../../../public/font/TsangerYuYangT_W03_W03.ttf");
+}
+
+//根节点字号大小
+$default-size: 16px !default;
+$default-size-sm: 16px !default;
+$default-size-md: 16px !default;
+$default-size-xl: 16px !default;
+
+//px转rem
+@function pxTorem($px){
+  @return math.div($px, $default-size) * 1rem;
+}
+
+//body样式
+p,span{
+  font-family: yu-w03, serif;
+  font-weight: 500;
+}
+
+//html字号
+@media (max-width: 768px){
+  html{
+    font-size: $default-size-sm;
+  }
+}
+@media (max-width: 992px){
+  html{
+    font-size: $default-size-md;
+  }
+}
+@media (max-width: 1200px){
+  html{
+    font-size: $default-size-xl;
+  }
+}
+@media (min-width: 1200px){
+  html{
+    font-size: $default-size;
+  }
+}

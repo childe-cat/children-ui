@@ -1,0 +1,184 @@
+.en-button {
+  @include inset-button;
+
+  transition: .2s;
+  border-radius: 5px;
+  color: white;
+  &:hover{
+    opacity: 0.7;
+  }
+}
+//按钮大小
+.en-button-small{
+  padding: pxTorem(5px) pxTorem(11px) ;
+  font-size: pxTorem(12px);
+}
+
+.en-button-default{
+  padding: pxTorem(8px) pxTorem(15px) ;
+  font-size: pxTorem(14px);
+}
+
+.en-button-large{
+  padding: pxTorem(12px) pxTorem(19px) ;
+  font-size: pxTorem(14px);
+}
+
+//默认按钮
+.en-button-light{
+  @extend .en-button;
+  background-color: $light-color;
+  color: $dark-color;
+  border: $secondary-color 1px solid;
+  &:hover{
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    border: rgba($primary-color,0.5) 1px solid;
+  }
+}
+
+.en-button-dark{
+  @extend .en-button;
+  background-color: $dark-color;
+}
+
+.en-button-primary{
+  @extend .en-button;
+  background-color: $primary-color;
+}
+
+.en-button-info{
+  @extend .en-button;
+  background-color: $info-color;
+}
+
+.en-button-success{
+  @extend .en-button;
+  background-color: $success-color;
+}
+
+.en-button-warning{
+  @extend .en-button;
+  background-color: $warning-color;
+}
+
+.en-button-danger{
+  @extend .en-button;
+  background-color: $danger-color;
+}
+
+.en-button-rich{
+  @extend .en-button;
+  background-color: $rich-color;
+}
+
+.is-text{
+  border: 0!important;
+  background-color: transparent;
+  &:hover{
+    background-color: rgba($secondary-color,0.09);
+    opacity: 1;
+  }
+  @at-root .en-button-light#{&} {
+    color: $dark-color;
+    &:hover{
+      color: rgba($dark-color,0.75);
+    }
+  }
+  @at-root .en-button-dark#{&} {
+    color: $dark-color;
+  }
+  @at-root .en-button-primary#{&} {
+    color: $primary-color;
+  }
+  @at-root .en-button-info#{&} {
+    color: $info-color;
+  }
+  @at-root .en-button-success#{&} {
+    color: $success-color;
+  }
+  @at-root .en-button-warning#{&} {
+    color: $warning-color;
+  }
+  @at-root .en-button-danger#{&} {
+    color: $danger-color;
+  }
+  @at-root .en-button-rich#{&} {
+    color: $rich-color;
+  }
+}
+
+.is-plain{
+  border: 0;
+  &:hover{
+    color: $light-color!important;
+    border: 0;
+    opacity: 1;
+  }
+  @at-root .en-button-light#{&} {
+    background-color: $light-color;
+    color: $dark-color;
+    border: $secondary-color 1px solid;
+    &:hover{
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color!important;
+      border: $primary-color 1px solid;
+    }
+  }
+  @at-root .en-button-dark#{&} {
+    color: $dark-color;
+    border: 1px solid $dark-color;
+    background-color: rgba($dark-color, .15);
+    &:hover{
+      background-color: $dark-color;
+    }
+  }
+  @at-root .en-button-primary#{&} {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background-color: rgba($primary-color, .15);
+    &:hover{
+      background-color: $primary-color;
+    }
+  }
+  @at-root .en-button-info#{&} {
+    color: $info-color;
+    border: 1px solid $info-color;
+    background-color: rgba($info-color, .15);
+    &:hover{
+      background-color: $info-color;
+    }
+  }
+  @at-root .en-button-success#{&} {
+    color: $success-color;
+    border: 1px solid $success-color;
+    background-color: rgba($success-color, .15);
+    &:hover{
+      background-color: $success-color;
+    }
+  }
+  @at-root .en-button-warning#{&} {
+    color: $warning-color;
+    border: 1px solid $warning-color;
+    background-color: rgba($warning-color, .15);
+    &:hover{
+      background-color: $warning-color;
+    }
+  }
+  @at-root .en-button-danger#{&} {
+    color: $danger-color;
+    border: 1px solid $danger-color;
+    background-color: rgba($danger-color, .15);
+    &:hover{
+      background-color: $danger-color;
+    }
+  }
+  @at-root .en-button-rich#{&} {
+    color: $rich-color;
+    border: 1px solid $rich-color;
+    background-color: rgba($rich-color, .15);
+    &:hover{
+      background-color: $rich-color;
+    }
+  }
+}
