@@ -5,40 +5,44 @@ export default {
 </script>
 <script setup lang="ts">
 
-import {onMounted} from "vue";
+import {onMounted, ref, watch} from "vue";
+let buttonSize = ref('');
 
-const props = defineProps({
-  type:{
-    type:String,
-    default:"primary"
-  },
-  icon:{
-    type:String,
-    default:'',
-  },
-  size:{
-    type:String,
-    default:"default"
-  },
-  round:Boolean,
-  disabled:Boolean,
-  plain:Boolean,
-  text: Boolean,
-  loading:Boolean,
+interface componentProps{
+  type:string,
+  icon:string,
+  size:string,
+  round:boolean,
+  disabled:boolean,
+  plain:boolean,
+  text:boolean,
+  loading:boolean,
+}
+
+const props = withDefaults(defineProps<componentProps>(),{
+  type:"primary",
+  icon:"",
+  size:"default",
+  round:false,
+  disabled:false,
+  plain:false,
+  text:false,
+  loading:false
 })
 
+watch(() => props.size,()=>{buttonSize.value = ['default','small','large'].includes(props.size) ? props.size : 'default';},{immediate:true})
 onMounted(()=>{
-
+  console.log(props.icon)
 })
 </script>
 
 <template>
-<button :disabled="disabled" :class="['en-button en-button-'+type + ' en-button-' + size,{
+<button :disabled="disabled" :class="['en-button en-button-'+type + ' en-button-' + buttonSize,{
   'is-text':props.text,
   'is-plain':props.plain
 }]">
   <i v-if="loading"></i>
-  <i v-if="icon && !loading"></i>
+  <i class="uIcon" :class="props.icon" v-if="icon && !loading"></i>
   <span><slot></slot></span>
 </button>
 </template>
