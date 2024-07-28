@@ -1,6 +1,7 @@
 import { forEach } from "lodash-es";
 import type {App} from "vue";
 import * as components from "./components";
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 export const createCatUI = () =>{
     return {

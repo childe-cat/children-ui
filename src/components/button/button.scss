@@ -1,32 +1,72 @@
 .en-button {
   @include inset-button;
 
+  position: relative;
   transition: .2s;
   border-radius: 5px;
   color: white;
-  &:hover{
-    opacity: 0.7;
+  overflow: hidden;
+}
+.en-button.is-circle{
+  border-radius: 50%;
+  padding: 0;
+  .uIcon{
+    display: inline-block;
   }
 }
 //按钮大小
 .en-button-small{
   padding: pxTorem(5px) pxTorem(11px) ;
   font-size: pxTorem(12px);
+  .loading{
+    width: pxTorem(12px);
+    height: pxTorem(12px);
+    line-height: pxTorem(12px);
+  }
+}
+.en-button-small.is-circle .uIcon{
+  font-size: pxTorem(12px);
+  line-height: pxTorem(12px);
+  height: pxTorem(12px);
+  margin: pxTorem(8px);
 }
 
 .en-button-default{
   padding: pxTorem(8px) pxTorem(15px) ;
   font-size: pxTorem(14px);
+  .loading{
+    width: pxTorem(14px);
+    height: pxTorem(14px);
+    line-height: pxTorem(14px);
+  }
+}
+
+.en-button-default.is-circle .uIcon{
+  font-size: pxTorem(14px);
+  line-height: pxTorem(14px);
+  height: pxTorem(14px);
+  margin: pxTorem(10px);
 }
 
 .en-button-large{
   padding: pxTorem(12px) pxTorem(19px) ;
   font-size: pxTorem(14px);
+  .loading{
+    width: pxTorem(14px);
+    height: pxTorem(14px);
+    line-height: pxTorem(14px);
+  }
+}
+
+.en-button-large.is-circle .uIcon{
+  font-size: pxTorem(16px);
+  line-height: pxTorem(16px);
+  height: pxTorem(16px);
+  margin: pxTorem(12px);
 }
 
 //默认按钮
 .en-button-light{
-  @extend .en-button;
   background-color: $light-color;
   color: $dark-color;
   border: $secondary-color 1px solid;
@@ -38,43 +78,36 @@
 }
 
 .en-button-dark{
-  @extend .en-button;
   background-color: $dark-color;
   border: $dark-color 1px solid;
 }
 
 .en-button-primary{
-  @extend .en-button;
   background-color: $primary-color;
   border: $primary-color 1px solid;
 }
 
 .en-button-info{
-  @extend .en-button;
   background-color: $info-color;
   border: $info-color 1px solid;
 }
 
 .en-button-success{
-  @extend .en-button;
   background-color: $success-color;
   border: $success-color 1px solid;
 }
 
 .en-button-warning{
-  @extend .en-button;
   background-color: $warning-color;
   border: $warning-color 1px solid;
 }
 
 .en-button-danger{
-  @extend .en-button;
   background-color: $danger-color;
   border: $danger-color 1px solid;
 }
 
 .en-button-rich{
-  @extend .en-button;
   background-color: $rich-color;
   border: $rich-color 1px solid;
 }
@@ -190,6 +223,35 @@
   }
 }
 
-.uIcon{
-  padding-right: 8px;
+.loading{
+  display: inline-block;
+  animation: loading 2s linear infinite;
+  transform-origin: 50% 50%;
+  margin-right: pxTorem(6px);
+}
+
+.uIcon~.buttonText,
+.loading~.buttonText{
+  padding-left: pxTorem(6px);
+}
+
+:deep(.en-ripple){
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  animation: ripple 500ms linear;
+}
+
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  0% { opacity: 0.15; }
+  100% { opacity: 0;height: 280%;width: 280%;}
 }
