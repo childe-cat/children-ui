@@ -1,0 +1,12 @@
+.buttonGroup .en-button{
+  border-radius: 0;
+  border-left: 1px solid rgba(white,0.15);
+}
+.buttonGroup .en-button:nth-child(1){
+  border-bottom-left-radius: $border-round;
+  border-top-left-radius: $border-round;
+}
+.buttonGroup .en-button:nth-last-child(1){
+  border-bottom-right-radius: $border-round;
+  border-top-right-radius: $border-round;
+}

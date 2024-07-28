@@ -83,7 +83,9 @@ const hoverFlag = computed(()=>{
 
 watch(() => props.size,(n)=>{buttonSize.value = ['default','small','large'].includes(n) ? n : 'default';},{immediate:true})
 onMounted(()=>{
-
+  if(text.value && text.value.innerHTML.length === 0 && props.icon){
+    text.value.style.paddingLeft = '0';
+  }
 })
 </script>
 
