@@ -1,0 +1,43 @@
+.en-input-box{
+  border:1px solid $border-color;
+  border-radius: $border-round;
+  cursor: text;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.en-input-box-small{
+  padding: pxTorem(2px) pxTorem(8px);
+  .en-input{
+    font-size: pxTorem(12px);
+  }
+}
+.en-input-box-default{
+  padding: pxTorem(4px) pxTorem(8px);
+  .en-input{
+    font-size: pxTorem(14px);
+  }
+}
+.en-input-box-large{
+  padding: pxTorem(8px) pxTorem(8px);
+  .en-input{
+    font-size: pxTorem(16px);
+  }
+}
+.is-focus{
+  border:1px solid $primary-color;
+}
+.en-input{
+  @include inset-input;
+  font-size: pxTorem(16px);
+  line-height: 18px;
+  color: $text-color;
+  width: 100%;
+}
+.en-input-box-small{
+
+}
+
+.en-input::placeholder{
+  color: $border-color;
+}

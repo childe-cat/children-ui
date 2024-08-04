@@ -90,7 +90,11 @@ onMounted(()=>{
 </script>
 
 <template>
-<button @mouseenter="hoverFlag ? moveButtonRipple($event) : moveButton($event)" @mouseleave="hoverFlag ? leaveButtonRipple($event) : leaveButton($event)" @click="clickButton($event)" :disabled="disabled" :class="['en-button en-button-'+type + ' en-button-' + buttonSize,{
+<button
+    @mouseenter="hoverFlag ? moveButtonRipple($event) : moveButton($event)"
+    @mouseleave="hoverFlag ? leaveButtonRipple($event) : leaveButton($event)"
+    @click="clickButton($event)" :disabled="disabled"
+    :class="['en-button en-button-'+type + ' en-button-' + buttonSize,{
   'is-text':props.text,
   'is-plain':props.plain,
   'is-circle':props.circle
@@ -102,5 +106,5 @@ onMounted(()=>{
 </template>
 
 <style scoped lang="scss">
-@import "button";
+@import "../../style/button/button";
 </style>

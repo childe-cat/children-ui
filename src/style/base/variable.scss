@@ -8,9 +8,12 @@ $rich-color:#EBDC3D;
 $light-color:#F8F9FA;
 $black-color:#000000;
 $dark-color:#343A40;
-$secondary-color:#6C757D;
+$secondary-color:#c0c4cc;
 $transparent-color:transparent;
-
-$border-round:5px;
+//边框
+$border-round:4px;
+$border-color:$secondary-color;
+//文字
+$text-color:$dark-color;
 
 

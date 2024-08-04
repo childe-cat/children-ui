@@ -62,5 +62,5 @@ onMounted(()=>{
 </template>
 
 <style scoped lang="scss">
-@import "buttonGroup";
+@import "../../style/button/buttonGroup";
 </style>
