@@ -3,7 +3,7 @@ import type {App} from "vue";
 import * as components from "./components";
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
-export const createCatUI = () =>{
+export const ChildrenUI = () =>{
     return {
         install:(app:App)=>{
             forEach(components,(component)=>{
