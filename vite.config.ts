@@ -8,7 +8,8 @@ export default defineConfig({
   build:{
     lib:{
       entry:path.resolve(__dirname,"src/index.ts"),
-      name:"cat-ui"
+      name:"children-ui",
+      fileName:(format)=>`children-ui.${format}.js`
     },
     rollupOptions:{
       external:["vue"],

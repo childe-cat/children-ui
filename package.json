@@ -1,7 +1,7 @@
 {
   "name": "children-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.0",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -22,7 +22,21 @@
     "sass": "^1.77.8",
     "typescript": "^5.2.2",
     "vite": "^5.3.4",
+    "vite-plugin-dts": "^4.0.2",
     "vitest": "^2.0.3",
     "vue-tsc": "^2.0.24"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/children-ui.umd.js",
+  "module": "dist/children-ui.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/children-ui.es.js",
+      "require": "./dist/children-ui.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   }
 }

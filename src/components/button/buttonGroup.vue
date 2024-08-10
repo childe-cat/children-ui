@@ -1,6 +1,4 @@
-<script lang="ts">
-export default {name:"EnButtonGroup"}
-</script>
+
 <script setup lang="ts">
 
 import {onMounted, reactive} from "vue";

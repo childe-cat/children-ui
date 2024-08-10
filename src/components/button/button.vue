@@ -1,8 +1,3 @@
-<script lang="ts">
-export default {
-  name:"EnButton",
-}
-</script>
 <script setup lang="ts">
 
 import {computed, onMounted, ref, watch} from "vue";
